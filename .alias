@@ -1,0 +1,4 @@
+alias g='gvim'
+alias ll='ls -laR'
+alias ..='cd ..'
+alias diff='diff -u'

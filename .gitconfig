@@ -1,5 +1,5 @@
 [user]
-	name = Mohamed Bamakhrama
-	email = mohamed@liacs.nl
+	name = Mohamed A. Bamakhrama
+	email = mohamed@alumni.tum.de
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
