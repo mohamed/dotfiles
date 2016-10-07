@@ -1,4 +1,4 @@
-COPY := cp -drf
+COPY := cp -Rf
 
 install:
 	# Files
@@ -8,4 +8,4 @@ install:
 	${COPY} .alias      ${HOME}/.alias
 	${COPY} .bashrc     ${HOME}/.bashrc
 	# Directories
-	${COPY} .vim        ${HOME}/.vim
+	${COPY} .vim        ${HOME}/
