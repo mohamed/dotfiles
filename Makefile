@@ -7,5 +7,6 @@ install:
 	${COPY} .gvimrc     ${HOME}/.gvimrc
 	${COPY} .alias      ${HOME}/.alias
 	${COPY} .bashrc     ${HOME}/.bashrc
+	${COPY} .profile    ${HOME}/.profile
 	# Directories
 	${COPY} .vim        ${HOME}/
