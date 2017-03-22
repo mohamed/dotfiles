@@ -1,5 +1,6 @@
 set prompt="%{\033[31m%}%B(%?)[%P]%n@%m:%{\033[34m%}%~%{\033[0m%}%b> "
 bindkey "^r" i-search-back
+stty erase '^?'
 alias vi 'vim'
 alias diff 'diff -u'
 alias v 'vim'
