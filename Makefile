@@ -9,5 +9,6 @@ install:
 	${COPY} .bashrc     ${HOME}/.bashrc
 	${COPY} .profile    ${HOME}/.profile
 	${COPY} .tmux.conf  ${HOME}/.tmux.conf
+	${COPY} .Xresources  ${HOME}/.Xresources
 	# Directories
 	${COPY} .vim        ${HOME}/
