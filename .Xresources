@@ -1,0 +1,6 @@
+!xterm*faceName: Adobe\ Courier
+xterm*faceName: Inconsolata
+xterm*faceSize: 20
+
+xterm*foreground: rgb:ff/ff/ff
+xterm*background: rgb:00/00/00
