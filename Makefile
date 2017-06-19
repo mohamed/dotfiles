@@ -8,5 +8,6 @@ install:
 	${COPY} .alias      ${HOME}/.alias
 	${COPY} .bashrc     ${HOME}/.bashrc
 	${COPY} .profile    ${HOME}/.profile
+	${COPY} .tmux.conf  ${HOME}/.tmux.conf
 	# Directories
 	${COPY} .vim        ${HOME}/
