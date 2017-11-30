@@ -10,5 +10,6 @@ install:
 	${COPY} .profile    ${HOME}/.profile
 	${COPY} .tmux.conf  ${HOME}/.tmux.conf
 	${COPY} .Xresources  ${HOME}/.Xresources
+	${COPY} .plan        ${HOME}/.plan
 	# Directories
 	${COPY} .vim        ${HOME}/
