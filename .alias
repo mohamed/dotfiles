@@ -1,6 +1,6 @@
 alias g='gvim'
-alias ll='ls -laF'
-alias l='ls -laF'
+alias ll='ls -laF --color=auto'
+alias l='ls -laF --color=auto'
 alias grep='grep -i --color=auto'
 alias ..='cd ..'
 alias diff='diff -u'
