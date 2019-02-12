@@ -9,6 +9,7 @@ set ic hls is
 "set cindent
 "set smartindent
 set smarttab
+set paste
 set noautoindent
 set tabstop=8
 set shiftwidth=8
