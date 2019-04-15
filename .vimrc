@@ -3,6 +3,18 @@ set nocompatible
 set backspace=indent,eol,start
 syntax on
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'justmao945/vim-clang'
+call vundle#end()            " required
+
+let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
 filetype plugin indent on
 set ic hls is
 
@@ -61,8 +73,8 @@ set wildmenu wildmode=full
 function SetCodingStyle()
     if g:codingstyle == 1
         set expandtab
-        set tabstop=4
-        set shiftwidth=4
+        set tabstop=2
+        set shiftwidth=2
         set textwidth=80
         set wrap linebreak nolist
         set cino+=(0
@@ -96,26 +108,26 @@ map <F12> :%s/\s\+$//g<CR>
 " Buffer navigation
 map <F8> :bp<CR>
 map <F9> :bn<CR>
-map <F10> :MBEbd<CR>
+map <F10> :bd<CR>
 inoremap <F8> <Esc>:bp<CR>
 inoremap <F9> <Esc>:bn<CR>
-inoremap <F10> <Esc>:MBEbd<CR>
+inoremap <F10> <Esc>:bd<CR>
 
 " working directory
 map <F6> :lcd %:p:h<CR>
 inoremap <F6> <Esc>:lcd %:p:h<CR>
 
 " Tag list
-map <F5> :TlistOpen<CR>
-inoremap <F5> <Esc>:TlistOpen<CR>
+"map <F5> :TlistOpen<CR>
+"inoremap <F5> <Esc>:TlistOpen<CR>
 
 " make
 map <F11> :!make clean all<CR>
 inoremap <F11> <Esc>:!make clean all<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $VIMRUNTIME/mswin.vim
-source $HOME/.vim/plugin/minibufexpl.vim
+"source $VIMRUNTIME/mswin.vim
+"source $HOME/.vim/plugin/minibufexpl.vim
 hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
 hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
 
