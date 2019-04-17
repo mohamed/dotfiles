@@ -2,13 +2,20 @@ set nocompatible
 set backspace=indent,eol,start
 syntax on
 
+"let g:clang_cpp_options = '-std=c++11'
+"let g:clang_c_options = ' || exit 0'
+"let g:clang_library_path='/opt/llvm/lib'
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'justmao945/vim-clang'
+"Plugin 'justmao945/vim-clang'
+Plugin 'Rip-Rip/clang_complete'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'szw/vim-tags'
+Plugin 'taglist.vim'
 call vundle#end()
 
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
