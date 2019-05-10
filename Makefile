@@ -1,7 +1,6 @@
 COPY := cp -Rf
 
 install:
-	# Files
 	${COPY} .vimrc      ${HOME}/.vimrc
 	${COPY} .gitconfig  ${HOME}/.gitconfig
 	${COPY} .gvimrc     ${HOME}/.gvimrc
@@ -11,5 +10,9 @@ install:
 	${COPY} .tmux.conf  ${HOME}/.tmux.conf
 	${COPY} .Xresources  ${HOME}/.Xresources
 	${COPY} .plan        ${HOME}/.plan
-	# Directories
-	${COPY} .vim        ${HOME}/
+	mkdir -p ${HOME}/.config/nvim
+	${COPY} init.vim ${HOME}/.config/nvim/
+	${COPY} coc.vim ${HOME}/.config/nvim/
+	${COPY} coc-settings.json ${HOME}/.config/nvim/
+	mkdir -p ${HOME}/.config/nvim/bundle
+	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.config/nvim/bundle/Vundle.vim
