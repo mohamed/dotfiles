@@ -93,6 +93,8 @@ let g:lightline = {
       \ },
       \ }
 
+
+nnoremap <silent> <C-l>  :<Plug>(coc-openlink)<cr>
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " manage extensions
