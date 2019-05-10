@@ -15,7 +15,7 @@ set expandtab               " converts tabs to white space
 set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
-set wildmode=longest,list   " get bash-like tab completions
+"set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
 set title
 
@@ -29,9 +29,11 @@ match ErrorMsg '\s\+$'
 map <F12> :%s/\s\+$//g<CR>
 
 " Buffer navigation
+map <F4> :TagbarToggle<CR>
 map <F8> :bp<CR>
 map <F9> :bn<CR>
 map <F10> :bd<CR>
+inoremap <F4> :TagbarToggle<CR>
 inoremap <F8> <Esc>:bp<CR>
 inoremap <F9> <Esc>:bn<CR>
 inoremap <F10> <Esc>:bd<CR>
@@ -54,12 +56,14 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'ap/vim-buftabline'
+Plugin 'majutsushi/tagbar'
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 " Color scheme
-colorscheme koehler
+"colorscheme koehler
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
