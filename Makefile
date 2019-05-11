@@ -11,8 +11,10 @@ install:
 	${COPY} .Xresources  ${HOME}/.Xresources
 	${COPY} .plan        ${HOME}/.plan
 	mkdir -p ${HOME}/.config/nvim
+	mkdir -p ${HOME}/.vim
 	${COPY} init.vim ${HOME}/.config/nvim/
 	${COPY} coc.vim ${HOME}/.config/nvim/
 	${COPY} coc-settings.json ${HOME}/.config/nvim/
 	mkdir -p ${HOME}/.config/nvim/bundle
 	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.config/nvim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
