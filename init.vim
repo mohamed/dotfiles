@@ -18,6 +18,7 @@ set number                  " add line numbers
 "set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
 set title
+set clipboard=unnamedplus
 
 " Spaces and tabs
 syntax match Tab /\t/
