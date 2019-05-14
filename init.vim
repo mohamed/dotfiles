@@ -59,6 +59,7 @@ Plugin 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'majutsushi/tagbar'
+Plugin 'cloudhead/neovim-fuzzy'
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on  " allows auto-indenting depending on file type
@@ -71,6 +72,8 @@ let NERDTreeShowHidden=1
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
+"let g:NERDTreeQuitOnOpen=1
+
+nnoremap <C-p> :FuzzyOpen<CR>
 
 source $HOME/.config/nvim/coc.vim
