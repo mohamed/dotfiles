@@ -60,12 +60,17 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'majutsushi/tagbar'
 Plugin 'cloudhead/neovim-fuzzy'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 " Color scheme
 "colorscheme koehler
+" vim theme
+let g:airline_theme='bubblegum'
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
