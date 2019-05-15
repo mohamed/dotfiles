@@ -1,5 +1,5 @@
 " Author: Mohamed A. Bamakhrama
-" Licensed under BSD 
+" Licensed under BSD
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic nvim settings
@@ -59,7 +59,6 @@ Plugin 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'majutsushi/tagbar'
-Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
@@ -71,7 +70,7 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 " Color scheme
 "colorscheme koehler
 " vim theme
-let g:airline_theme='bubblegum'
+let g:airline_theme='minimalist'
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
