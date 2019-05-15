@@ -62,6 +62,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'cloudhead/neovim-fuzzy'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -79,6 +80,6 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " close NERDTree after a file is opened
 "let g:NERDTreeQuitOnOpen=1
 
-nnoremap <C-p> :FuzzyOpen<CR>
+nnoremap <C-p> :FZF<CR>
 
 source $HOME/.config/nvim/coc.vim
