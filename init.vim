@@ -40,7 +40,7 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'ap/vim-buftabline'
+"Plugin 'ap/vim-buftabline'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -54,6 +54,8 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 "colorscheme koehler
 " vim theme
 let g:airline_theme='minimalist'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Keys to emulate system clipboard
 inoremap <C-v> <ESC>"+pa
