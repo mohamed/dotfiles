@@ -7,7 +7,7 @@
 set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
-set mouse=v                 " middle-click paste with mouse
+set mouse=a                 " middle-click paste with mouse
 set hlsearch                " highlight search results
 set tabstop=2               " number of columns occupied by a tab character
 set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
@@ -25,23 +25,6 @@ syntax match Tab /\t/
 highlight ExtraWhitespace ctermbg=red  guibg=red
 highlight Tab ctermbg=blue guibg=blue
 match ErrorMsg '\s\+$'
-
-" Remove all Trailing withespaces
-map <F12> :%s/\s\+$//g<CR>
-
-" Buffer navigation
-map <F4> :TagbarToggle<CR>
-map <F8> :bp<CR>
-map <F9> :bn<CR>
-map <F10> :bd<CR>
-inoremap <F4> :TagbarToggle<CR>
-inoremap <F8> <Esc>:bp<CR>
-inoremap <F9> <Esc>:bn<CR>
-inoremap <F10> <Esc>:bd<CR>
-
-" Go to directory of current file
-map <F6> :lcd %:p:h<CR>
-inoremap <F6> <Esc>:lcd %:p:h<CR>
 
 set backupdir=$HOME/tmp
 set dir=$HOME/tmp
@@ -71,6 +54,27 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 "colorscheme koehler
 " vim theme
 let g:airline_theme='minimalist'
+
+" Keys to emulate system clipboard
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+
+" Remove all Trailing withespaces
+map <F12> :%s/\s\+$//g<CR>
+
+" Buffer navigation
+map <F4> :TagbarToggle<CR>
+map <F8> :bp<CR>
+map <F9> :bn<CR>
+map <F10> :bd<CR>
+inoremap <F4> :TagbarToggle<CR>
+inoremap <F8> <Esc>:bp<CR>
+inoremap <F9> <Esc>:bn<CR>
+inoremap <F10> <Esc>:bd<CR>
+
+" Go to directory of current file
+map <F6> :lcd %:p:h<CR>
+inoremap <F6> <Esc>:lcd %:p:h<CR>
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
