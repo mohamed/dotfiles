@@ -1,141 +1,97 @@
+" Author: Mohamed A. Bamakhrama
+" Licensed under BSD
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Basic nvim settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set backspace=indent,eol,start
 syntax on
-
-"let g:clang_cpp_options = '-std=c++11'
-"let g:clang_c_options = ' || exit 0'
-"let g:clang_library_path='/opt/llvm/lib'
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'justmao945/vim-clang'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'szw/vim-tags'
-Plugin 'taglist.vim'
-call vundle#end()
-
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-
-filetype plugin indent on
+set nocompatible            " Disable compatibility to old-time vi
+set showmatch               " Show matching brackets.
+set ignorecase              " Do case insensitive matching
+set mouse=a                 " middle-click paste with mouse
+set hlsearch                " highlight search results
+set tabstop=2               " number of columns occupied by a tab character
+set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
+set expandtab               " converts tabs to white space
+set shiftwidth=2            " width for autoindents
+set autoindent              " indent a new line the same amount as the line just typed
+set number                  " add line numbers
+"set wildmode=longest,list   " get bash-like tab completions
+set cc=80                   " set an 80 column border for good coding style
+set title
+set clipboard+=unnamedplus
 set ic hls is
-
-"set cindent
-"set smartindent
-set smarttab
 set paste
-set noautoindent
-set tabstop=8
-set shiftwidth=8
-set textwidth=0 " 0 no line breaking
-set noexpandtab
-set ruler
-set number
-set showcmd             " show typed command in status bar
-set showmode            " show mode in status bar (insert/replace/...)
-set title               " show file in titlebar
-set wildmenu            " completion with menu
-set hidden              " remember undo after quitting
-set history=50          " keep 50 lines of command history
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
-" Spaces & Tabs
+" Spaces and tabs
 syntax match Tab /\t/
 highlight ExtraWhitespace ctermbg=red  guibg=red
 highlight Tab ctermbg=blue guibg=blue
 match ErrorMsg '\s\+$'
-"highlight SpecialKey ctermfg=1
 
-"""""""""""""""""""""""""""""""""""""""""""
+set backupdir=$HOME/tmp
+set dir=$HOME/tmp
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/bundle')
 
-" Omni completion
-"set omnifunc=syntaxcomplete#Complete
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plugin 'scrooloose/nerdtree'
+"Plugin 'ap/vim-buftabline'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/fzf', { 'dir': '~/.config/fzf', 'do': './install --all' }
 
-" display settings
-set ch=1                " make command line one line high
-set laststatus=2        " use 2 lines for the status bar
-set statusline=
-set statusline +=%1*\ %n\ %*            "buffer number
-set statusline +=%5*%{&ff}%*            "file format
-set statusline +=%3*%y%*                "file type
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L%*               "total lines
-set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*0x%04B\ %*          "character under cursor
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on  " allows auto-indenting depending on file type
 
-" system settings
-"set magic               " change the way backslashes are used in search patterns
-"set viminfo='20,\"500   " remember copy registers after quitting in the .viminfo file -- 20 jump links, regs up to 500 lines'
+" Color scheme
+colorscheme koehler
+" vim theme
+set t_Co=256
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
-set wildmenu wildmode=full
-
-" Linux kernel coding style
-function SetCodingStyle()
-    if g:codingstyle == 1
-        set expandtab
-        set tabstop=2
-        set shiftwidth=2
-        set textwidth=80
-        set wrap linebreak nolist
-        set cino+=(0
-        set cino+=t0
-        let g:codingstyle = 2
-        let g:codingstylename = 'Google style'
-    else
-        set noexpandtab
-        set tabstop=8
-        set shiftwidth=8
-        set textwidth=80
-        set wrap linebreak nolist
-        set cino+=(0
-        set cino+=t0
-        let g:codingstyle = 1
-        let g:codingstylename = 'Linux style'
-    endif
-endfunction
-let g:codingstyle = 1
-call SetCodingStyle()
-map <F7> :call SetCodingStyle()<CR>
-syn on
-
-" Colorscheme
-set guifont=Inconsolata\ 20
-colo koehler
+" Keys to emulate system clipboard
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
 
 " Remove all Trailing withespaces
 map <F12> :%s/\s\+$//g<CR>
 
 " Buffer navigation
+map <F4> :TagbarToggle<CR>
 map <F8> :bp<CR>
 map <F9> :bn<CR>
 map <F10> :bd<CR>
+inoremap <F4> :TagbarToggle<CR>
 inoremap <F8> <Esc>:bp<CR>
 inoremap <F9> <Esc>:bn<CR>
 inoremap <F10> <Esc>:bd<CR>
 
-" working directory
+" Go to directory of current file
 map <F6> :lcd %:p:h<CR>
 inoremap <F6> <Esc>:lcd %:p:h<CR>
 
-" Tag list
-map <F5> :TlistOpen<CR>
-inoremap <F5> <Esc>:TlistOpen<CR>
+" NERDTree on CTRL+n
+let NERDTreeShowHidden=1
+map <silent> <C-n> :NERDTreeToggle<CR>
 
-" make
-map <F11> :!make clean all<CR>
-inoremap <F11> <Esc>:!make clean all<CR>
+" close NERDTree after a file is opened
+"let g:NERDTreeQuitOnOpen=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
-hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+nnoremap <C-p> :FZF<CR>
 
-set backupdir=$HOME/tmp
-set dir=$HOME/tmp
-
-set list
-set listchars=tab:__
+"source $HOME/.config/nvim/coc.vim
