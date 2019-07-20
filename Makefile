@@ -15,6 +15,5 @@ install:
 	${COPY} init.vim ${HOME}/.config/nvim/
 	${COPY} coc.vim ${HOME}/.config/nvim/
 	${COPY} coc-settings.json ${HOME}/.config/nvim/
-	mkdir -p ${HOME}/.config/nvim/bundle
-	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.config/nvim/bundle/Vundle.vim
-	git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+	${COPY} setup_plugins.sh ${HOME}/.config/nvim/
+	${HOME}/.config/nvim/setup_plugins.sh
