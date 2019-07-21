@@ -38,7 +38,7 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 " Color scheme
 "colorscheme koehler
 " vim theme
-let g:airline_theme='minimalist'
+let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -58,6 +58,9 @@ inoremap <F4> :TagbarToggle<CR>
 inoremap <F8> <Esc>:bp<CR>
 inoremap <F9> <Esc>:bn<CR>
 inoremap <F10> <Esc>:bd<CR>
+
+" Terminal
+tnoremap <Esc> <C-\><C-n>
 
 " Go to directory of current file
 map <F6> :lcd %:p:h<CR>
