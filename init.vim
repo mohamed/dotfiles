@@ -32,7 +32,7 @@ set dir=$HOME/tmp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
+filetype on
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 " Color scheme
