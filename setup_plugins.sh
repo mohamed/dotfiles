@@ -16,6 +16,9 @@ declare -a plugins=(
 SERVER="https://github.com"
 DEST=$HOME/.config/nvim/pack/plugins/start/
 
+rm -rf $DEST
+echo "Deleting existing $DEST"
+
 mkdir -p $DEST
 echo "$DEST created..."
 
@@ -23,7 +26,6 @@ function get_plugin() {
   repo=$SERVER/$1
   echo "Cloning $repo"
   folder=`basename $1`
-  rm -rf $DEST/$folder
   git clone $repo $DEST/$folder
 }
 
