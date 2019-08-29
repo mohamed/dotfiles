@@ -11,6 +11,7 @@ declare -a plugins=(
     "vim-airline/vim-airline-themes"
     "rhysd/vim-clang-format"
     "junegunn/fzf"
+    "junegunn/fzf.vim"
 )
 
 SERVER="https://github.com"
