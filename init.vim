@@ -74,5 +74,6 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 "let g:NERDTreeQuitOnOpen=1
 
 nnoremap <C-p> :FZF<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 source $HOME/.config/nvim/coc.vim
