@@ -32,6 +32,8 @@ syntax match Tab /\t/
 highlight ExtraWhitespace ctermbg=red  guibg=red
 highlight Tab ctermbg=blue guibg=blue
 match ErrorMsg '\s\+$'
+set list
+set listchars=tab:__
 
 set backupdir=$HOME/tmp
 set dir=$HOME/tmp
