@@ -25,8 +25,7 @@ set cc=80                   " set an 80 column border for good coding style
 set title
 set clipboard+=unnamedplus
 set ic hls is
-set paste
-set textwidth=80
+set tw=80
 set linebreak
 "set spell spelllang=en_us
 
