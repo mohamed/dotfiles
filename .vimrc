@@ -25,6 +25,8 @@ set title
 set clipboard+=unnamedplus
 set ic hls is
 set paste
+set textwidth=80
+set linebreak
 "set spell spelllang=en_us
 
 " Spaces and tabs

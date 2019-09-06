@@ -20,6 +20,8 @@ set hidden
 set cc=80                   " set an 80 column border for good coding style
 set title
 set clipboard+=unnamedplus
+set textwidth=80
+set linebreak
 
 " Spaces and tabs
 syntax match Tab /\t/
