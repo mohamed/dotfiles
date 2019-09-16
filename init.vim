@@ -79,7 +79,12 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " close NERDTree after a file is opened
 "let g:NERDTreeQuitOnOpen=1
 
+" navigation shortcuts
 nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
+set wildcharm=<Tab>
+set wildmenu
+set wildmode=full
+nnoremap <leader><Tab> :buffer<Space><Tab>
 
 source $HOME/.config/nvim/coc.vim
