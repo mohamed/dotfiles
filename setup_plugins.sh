@@ -12,6 +12,7 @@ declare -a plugins=(
     "rhysd/vim-clang-format"
     "junegunn/fzf"
     "junegunn/fzf.vim"
+    "jackguo380/vim-lsp-cxx-highlight"
 )
 
 SERVER="https://github.com"
