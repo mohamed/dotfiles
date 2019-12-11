@@ -36,11 +36,8 @@ do
   get_plugin $p &
 done
 
-for job in `jobs -p`
-do
-  echo "Waiting for job $job to finish..."
-  wait $job
-done
+echo "### Waiting for pending jobs"
+wait < <(jobs -p) || exit
 
 # Handle coc.vim
 cd $DEST/coc.nvim && ./install.sh nightly
