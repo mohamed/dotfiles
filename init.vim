@@ -87,4 +87,10 @@ set wildmenu
 set wildmode=full
 nnoremap <leader><Tab> :buffer<Space><Tab>
 
+" diff mode style
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
 source $HOME/.config/nvim/coc.vim
