@@ -1,6 +1,16 @@
 !xterm*faceName: Adobe\ Courier
-xterm*faceName: Inconsolata
-xterm*faceSize: 20
+!xterm*faceName: Inconsolata
+xterm*faceName: Fira\ Code:style=Regular
+xterm*faceSize: 10
+xterm*renderFont: true
 
 xterm*foreground: rgb:ff/ff/ff
 xterm*background: rgb:00/00/00
+
+xterm*loginshell: true
+
+xterm*rightScrollBar: true
+xterm*ScrollBar: true
+XTerm*saveLines: 16384
+
+xterm*scrollTtyOutput: false
