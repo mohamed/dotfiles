@@ -3,16 +3,15 @@
 set -eu
 
 declare -a plugins=(
-    "neoclide/coc.nvim"
     "scrooloose/nerdtree"
     "majutsushi/tagbar"
-    "nfvs/vim-perforce"
+#    "nfvs/vim-perforce"
     "vim-airline/vim-airline"
     "vim-airline/vim-airline-themes"
-    "rhysd/vim-clang-format"
+#    "rhysd/vim-clang-format"
     "junegunn/fzf"
     "junegunn/fzf.vim"
-    "jackguo380/vim-lsp-cxx-highlight"
+#    "jackguo380/vim-lsp-cxx-highlight"
 )
 
 SERVER="https://github.com"
@@ -40,7 +39,7 @@ echo "### Waiting for pending jobs"
 wait < <(jobs -p) || exit
 
 # Handle coc.vim
-cd $DEST/coc.nvim && ./install.sh nightly
+cd ${DEST} && curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
 # Handle fzf
 cd $DEST/fzf && ./install --all
 
