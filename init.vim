@@ -18,7 +18,7 @@ set number                  " add line numbers
 set hidden
 "set paste
 "set wildmode=longest,list   " get bash-like tab completions
-set cc=80                   " set an 80 column border for good coding style
+"set cc=80                   " set an 80 column border for good coding style
 set title
 set clipboard+=unnamedplus
 set tw=80
@@ -41,7 +41,14 @@ filetype on
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 " Color scheme
-"colorscheme koehler
+""" bat
+"set termguicolors
+"colorscheme bat
+""" Solarized
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 " vim theme
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1

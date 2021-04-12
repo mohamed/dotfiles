@@ -11,6 +11,8 @@ declare -a plugins=(
 #    "rhysd/vim-clang-format"
     "junegunn/fzf"
     "junegunn/fzf.vim"
+    "jamespwilliams/bat.vim"
+    "altercation/vim-colors-solarized"
 #    "jackguo380/vim-lsp-cxx-highlight"
 )
 
