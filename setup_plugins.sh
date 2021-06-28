@@ -11,9 +11,11 @@ declare -a plugins=(
 #    "rhysd/vim-clang-format"
     "junegunn/fzf"
     "junegunn/fzf.vim"
-    "jamespwilliams/bat.vim"
+#    "jamespwilliams/bat.vim"
     "altercation/vim-colors-solarized"
 #    "jackguo380/vim-lsp-cxx-highlight"
+    "neovim/nvim-lspconfig"
+    "nvim-treesitter/nvim-treesitter"
 )
 
 SERVER="https://github.com"
@@ -41,7 +43,7 @@ echo "### Waiting for pending jobs"
 wait < <(jobs -p) || exit
 
 # Handle coc.vim
-cd ${DEST} && curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
+#cd ${DEST} && curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
 # Handle fzf
 cd $DEST/fzf && ./install --all
 

@@ -100,4 +100,17 @@ highlight DiffDelete cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Re
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
-source $HOME/.config/nvim/coc.vim
+" Configure ccls using nvim LSP
+lua require'lspconfig'.ccls.setup{}
+lua require'lspconfig'.pyright.setup{}
+lua require'lspconfig'.bashls.setup{}
+lua require'lspconfig'.svls.setup{}
+
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gh     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
