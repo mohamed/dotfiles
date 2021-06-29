@@ -15,6 +15,7 @@ declare -a plugins=(
     "altercation/vim-colors-solarized"
 #    "jackguo380/vim-lsp-cxx-highlight"
     "neovim/nvim-lspconfig"
+    "nvim-lua/completion-nvim"
     "nvim-treesitter/nvim-treesitter"
 )
 
