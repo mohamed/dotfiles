@@ -20,7 +20,8 @@ declare -a plugins=(
 )
 
 SERVER="https://github.com"
-DEST=$HOME/.config/nvim/pack/plugins/start/
+[ -z "$1" ] && echo "No argument supplied" && exit 1
+DEST=$HOME/${1}/pack/plugins/start/
 
 rm -rf $DEST
 echo "Deleting existing $DEST"

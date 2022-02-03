@@ -1,19 +1,18 @@
-COPY := cp -Rf
+STOW  := stow -t $(HOME)
+MKDIR := mkdir -p
 
 install:
-	${COPY} .vimrc      ${HOME}/.vimrc
-	${COPY} .gitconfig  ${HOME}/.gitconfig
-	${COPY} .gvimrc     ${HOME}/.gvimrc
-	${COPY} .alias      ${HOME}/.alias
-	${COPY} .bashrc     ${HOME}/.bashrc
-	${COPY} .profile    ${HOME}/.profile
-	${COPY} .tmux.conf  ${HOME}/.tmux.conf
-	${COPY} .Xresources  ${HOME}/.Xresources
-	${COPY} .plan        ${HOME}/.plan
-	mkdir -p ${HOME}/.config/nvim
-	mkdir -p ${HOME}/.vim
-	${COPY} init.vim ${HOME}/.config/nvim/
-	${COPY} coc.vim ${HOME}/.config/nvim/
-	${COPY} coc-settings.json ${HOME}/.config/nvim/
-	${COPY} setup_plugins.sh ${HOME}/.config/nvim/
-	${HOME}/.config/nvim/setup_plugins.sh
+	$(STOW) tmux
+	$(STOW) git
+	$(STOW) bash
+	$(STOW) csh
+	$(STOW) astyle
+	$(STOW) gdb
+	$(STOW) x11
+	$(STOW) vim
+	$(MKDIR) $(HOME)/.vim
+	./setup_plugins.sh .vim
+	# nvim uses .config
+	$(MKDIR) $(HOME)/.config/nvim
+	stow -t $(HOME)/.config/nvim nvim
+	./setup_plugins.sh .config/nvim
