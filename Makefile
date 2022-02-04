@@ -1,7 +1,9 @@
 STOW  := stow -t $(HOME)
 MKDIR := mkdir -p
 
-install:
+.PHONY: stow vim_plugins
+
+stow:
 	$(STOW) tmux
 	$(STOW) git
 	$(STOW) bash
@@ -11,8 +13,10 @@ install:
 	$(STOW) x11
 	$(STOW) vim
 	$(MKDIR) $(HOME)/.vim
-	./setup_plugins.sh .vim
 	# nvim uses .config
 	$(MKDIR) $(HOME)/.config/nvim
 	stow -t $(HOME)/.config/nvim nvim
+
+vim_plugins:
+	./setup_plugins.sh .vim
 	./setup_plugins.sh .config/nvim
