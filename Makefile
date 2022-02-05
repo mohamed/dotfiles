@@ -7,7 +7,7 @@ endif
 
 MKDIR := mkdir -p
 
-.PHONY: stow vim_plugins deps
+.PHONY: stow vim_plugins deps tools tmux
 
 stow: deps
 	$(STOW) tmux
@@ -22,6 +22,19 @@ stow: deps
 # nvim uses .config
 	$(MKDIR) $(HOME)/.config/nvim
 	stow -t $(HOME)/.config/nvim nvim
+
+tools:
+	sudo apt-get install git cmake build-essential libtool flex \
+	libtool-bin autotools-dev clang llvm gdb valgrind libevent-dev \
+	ripgrep
+
+tmux:
+	cd $(HOME)/repo && git clone https://github.com/tmux/tmux
+	cd $(HOME)/repo/tmux && git checkout 3.2a
+	cd $(HOME)/repo/tmux && sh autogen.sh
+	cd $(HOME)/repo/tmux && ./configure --prefix=$(HOME)
+	make -C $(HOME)/repo/tmux install -j 4
+
 
 vim_plugins:
 	./setup_plugins.sh .vim
