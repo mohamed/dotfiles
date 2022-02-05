@@ -10,18 +10,18 @@ MKDIR := mkdir -p
 .PHONY: stow vim_plugins deps tools tmux
 
 stow: deps
-	$(STOW) tmux
-	$(STOW) git
-	$(STOW) bash
-	$(STOW) csh
-	$(STOW) astyle
-	$(STOW) gdb
-	$(STOW) x11
-	$(STOW) vim
+	$(STOW) -t $(HOME) tmux
+	$(STOW) -t $(HOME) git
+	$(STOW) -t $(HOME) bash
+	$(STOW) -t $(HOME) csh
+	$(STOW) -t $(HOME) astyle
+	$(STOW) -t $(HOME) gdb
+	$(STOW) -t $(HOME) x11
+	$(STOW) -t $(HOME) vim
 	$(MKDIR) $(HOME)/.vim
 # nvim uses .config
 	$(MKDIR) $(HOME)/.config/nvim
-	stow -t $(HOME)/.config/nvim nvim
+	$(STOW) -t $(HOME)/.config/nvim nvim
 
 tools:
 	sudo apt-get install git cmake build-essential libtool flex \
