@@ -26,7 +26,8 @@ stow: deps
 tools:
 	sudo apt-get install git cmake build-essential libtool flex \
 	libtool-bin autotools-dev clang llvm gdb valgrind libevent-dev \
-	ripgrep
+	ripgrep htop micro gawk bison graphviz pkg-config tcl-dev \
+	libreadline-dev gperf autoconf
 
 tmux:
 	cd $(HOME)/repo && git clone https://github.com/tmux/tmux
