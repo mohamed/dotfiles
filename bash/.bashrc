@@ -5,7 +5,7 @@ bold=$(tput bold)
 reset=$(tput sgr0)
 export PS1="\[$green$bold\]\u@\h\[$reset\]:\[$blue$bold\]\w\[$reset\] \$ "
 
-export PATH=${HOME}/bin:${PATH}
+export PATH=${HOME}/bin:${HOME}/.local/bin:${PATH}
 
 source ${HOME}/.alias
 
