@@ -1,0 +1,7 @@
+[[language]]
+name = "systemverilog"
+scope = "scope.systemverilog"
+file-types = ["sv", "v"]
+language-server = { command = "svls" }
+comment-token = "//"
+roots = []
