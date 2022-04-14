@@ -19,6 +19,9 @@ stow: deps
 	$(STOW) -t $(HOME) x11
 	$(STOW) -t $(HOME) vim
 	$(MKDIR) $(HOME)/.vim
+# helix
+	$(MKDIR) $(HOME)/.config/helix
+	$(STOW) -t $(HOME)/.config/helix helix
 # nvim uses .config
 	$(MKDIR) $(HOME)/.config/nvim
 	$(STOW) -t $(HOME)/.config/nvim nvim
