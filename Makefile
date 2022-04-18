@@ -23,8 +23,9 @@ stow: deps
 	$(MKDIR) $(HOME)/.config/helix
 	$(STOW) -t $(HOME)/.config/helix helix
 # nvim uses .config
-	$(MKDIR) $(HOME)/.config/nvim
-	$(STOW) -t $(HOME)/.config/nvim nvim
+	$(MAKE) setup_nvim
+#	$(MKDIR) $(HOME)/.config/nvim
+#	$(STOW) -t $(HOME)/.config/nvim nvim
 
 tools:
 	sudo apt-get install git cmake build-essential libtool flex \
@@ -39,6 +40,10 @@ tmux:
 	cd $(HOME)/repo/tmux && ./configure --prefix=$(HOME)
 	make -C $(HOME)/repo/tmux install -j 4
 
+setup_nvim:
+	git clone https://github.com/NvChad/NvChad $(HOME)/.config/nvim --depth 1
+	nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+	$(STOW) -t $(HOME)/.config/nvim nvim
 
 vim_plugins:
 	./setup_plugins.sh .vim
