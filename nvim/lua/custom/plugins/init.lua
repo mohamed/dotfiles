@@ -1,4 +1,4 @@
 return {
-  { "junegunn/fzf" },
-  { "junegunn/fzf.vim"},
+  ["junegunn/fzf"] = {},
+  ["junegunn/fzf.vim"] = {},
 }

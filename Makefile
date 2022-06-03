@@ -42,8 +42,13 @@ tmux:
 
 setup_nvim:
 	git clone https://github.com/NvChad/NvChad $(HOME)/.config/nvim --depth 1
-	nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+#	nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 	$(STOW) -t $(HOME)/.config/nvim nvim
+
+rm_nvim:
+	$(RM) -r $(HOME)/.config/nvim
+	$(RM) -r $(HOME)/.local/share/nvim
+	$(RM) -r $(HOME)/.cache/nvim
 
 vim_plugins:
 	./setup_plugins.sh .vim

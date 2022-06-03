@@ -3,10 +3,10 @@
 local M = {}
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
-local userPlugins = require "custom.plugins" -- path to table
+--local userPlugins = require "custom.plugins" -- path to table
 
 M.plugins = {
-  install = userPlugins,
+    user = require "custom.plugins",
 }
 
 -- example of changing theme:
