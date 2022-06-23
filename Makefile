@@ -25,6 +25,7 @@ stow: deps
 	$(MKDIR) $(HOME)/.config/i3
 	$(STOW) -t $(HOME)/.config/i3 i3
 	$(COPY) i3-keyboard-layout $(HOME)/bin
+	$(COPY) i3-sleep.sh $(HOME)/bin
 	$(COPY) setup_tmux_terminals.sh $(HOME)/bin
 # helix
 	$(MKDIR) $(HOME)/.config/helix
