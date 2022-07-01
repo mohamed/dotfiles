@@ -4,10 +4,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic nvim settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
+set nocompatible            " Disable compatibility to old-time vi
 set backspace=indent,eol,start
 syntax on
-set nocompatible            " Disable compatibility to old-time vi
 set showmatch               " Show matching brackets.
 set ignorecase              " Do case insensitive matching
 set mouse=a                 " middle-click paste with mouse
@@ -19,15 +18,14 @@ set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set hidden
-set paste
+"set paste
 "set wildmode=longest,list   " get bash-like tab completions
-set cc=80                   " set an 80 column border for good coding style
+"set cc=80                   " set an 80 column border for good coding style
 set title
 set clipboard+=unnamedplus
-set ic hls is
 set tw=80
 set linebreak
-"set spell spelllang=en_us
+set ic hls is
 
 " Spaces and tabs
 syntax match Tab /\t/
@@ -46,47 +44,72 @@ filetype on
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 " Color scheme
-colorscheme koehler
+"set t_Co=256
+"colorscheme koehler
+""" Solarized
+set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+let base16colorspace=256
+set termguicolors
+colorscheme base16-default-dark
+
 " vim theme
-set t_Co=256
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_powerline_fonts = 1
+
+" map leader to space
+let mapleader = " "
 
 " Keys to emulate system clipboard
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 
 " Remove all Trailing withespaces
-map <F12> :%s/\s\+$//g<CR>
+map <Leader>s :%s/\s\+$//g<CR>
 
 " Buffer navigation
-map <F4> :TagbarToggle<CR>
-map <F8> :bp<CR>
-map <F9> :bn<CR>
-map <F10> :bd<CR>
-inoremap <F4> :TagbarToggle<CR>
-inoremap <F8> <Esc>:bp<CR>
-inoremap <F9> <Esc>:bn<CR>
-inoremap <F10> <Esc>:bd<CR>
+map <Leader>t :TagbarToggle<CR>
+map <S-Tab> :bp<CR>
+map <Tab> :bn<CR>
+map <Leader>x :bd<CR>
+inoremap <Leader>t :TagbarToggle<CR>
+inoremap <S-Tab> <Esc>:bp<CR>
+inoremap <Tab> <Esc>:bn<CR>
+inoremap <Leader>x <Esc>:bd<CR>
+
+" Terminal
+"tnoremap <Esc> <C-\><C-n>
 
 " Go to directory of current file
-map <F6> :lcd %:p:h<CR>
-inoremap <F6> <Esc>:lcd %:p:h<CR>
+map <Leader>d :lcd %:p:h<CR>
+inoremap <Leader>d <Esc>:lcd %:p:h<CR>
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
-map <silent> <C-n> :NERDTreeToggle<CR>
+map <silent> <Leader>n :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
 "let g:NERDTreeQuitOnOpen=1
 
-nnoremap <C-p> :FZF<CR>
+" navigation shortcuts
+nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
+set wildcharm=<Tab>
+set wildmenu
+set wildmode=full
+nnoremap <leader><Tab> :buffer<Space><Tab>
+
 " diff mode style
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=20 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
-"source $HOME/.config/nvim/coc.vim
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c

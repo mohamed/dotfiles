@@ -12,11 +12,12 @@ declare -a plugins=(
     "junegunn/fzf"
     "junegunn/fzf.vim"
 #    "jamespwilliams/bat.vim"
-    "altercation/vim-colors-solarized"
+#    "altercation/vim-colors-solarized"
+    "chriskempson/base16-vim"
 #    "jackguo380/vim-lsp-cxx-highlight"
-    "neovim/nvim-lspconfig"
-    "nvim-lua/completion-nvim"
-    "nvim-treesitter/nvim-treesitter"
+#    "neovim/nvim-lspconfig"
+#    "nvim-lua/completion-nvim"
+#    "nvim-treesitter/nvim-treesitter"
 )
 
 SERVER="https://github.com"

@@ -5,6 +5,7 @@ STOW_VER       := 2.3.1
 STOW           := $(HOME)/bin/stow
 endif
 
+REPO   = $(shell git rev-parse --show-toplevel)
 MKDIR := mkdir -p
 COPY  := cp -f
 
@@ -21,6 +22,7 @@ stow: deps
 	$(STOW) -t $(HOME) x11
 	$(STOW) -t $(HOME) vim
 	$(MKDIR) $(HOME)/.vim
+<<<<<<< HEAD
 # i3
 	$(MKDIR) $(HOME)/.config/i3
 	$(STOW) -t $(HOME)/.config/i3 i3
@@ -28,8 +30,8 @@ stow: deps
 	$(COPY) i3-sleep.sh $(HOME)/bin
 	$(COPY) setup_tmux_terminals.sh $(HOME)/bin
 # helix
-	$(MKDIR) $(HOME)/.config/helix
-	$(STOW) -t $(HOME)/.config/helix helix
+#	$(MKDIR) $(HOME)/.config/helix
+#	$(STOW) -t $(HOME)/.config/helix helix
 # nvim uses .config
 	$(MAKE) setup_nvim
 #	$(MKDIR) $(HOME)/.config/nvim
@@ -49,9 +51,9 @@ tmux:
 	make -C $(HOME)/repo/tmux install -j 4
 
 setup_nvim:
-	git clone https://github.com/NvChad/NvChad $(HOME)/.config/nvim --depth 1
-#	nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
-	$(STOW) -t $(HOME)/.config/nvim nvim
+	./setup_plugins.sh .config/nvim
+	$(RM) $(HOME)/.config/nvim/init.vim
+	ln -s $(REPO)/vim/.vimrc $(HOME)/.config/nvim/init.vim
 
 rm_nvim:
 	$(RM) -r $(HOME)/.config/nvim
