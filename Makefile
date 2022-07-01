@@ -20,15 +20,13 @@ stow: deps
 	$(STOW) -t $(HOME) astyle
 	$(STOW) -t $(HOME) gdb
 	$(STOW) -t $(HOME) x11
-	$(STOW) -t $(HOME) vim
-	$(MKDIR) $(HOME)/.vim
-<<<<<<< HEAD
 # i3
-	$(MKDIR) $(HOME)/.config/i3
-	$(STOW) -t $(HOME)/.config/i3 i3
-	$(COPY) i3-keyboard-layout $(HOME)/bin
-	$(COPY) i3-sleep.sh $(HOME)/bin
-	$(COPY) setup_tmux_terminals.sh $(HOME)/bin
+#	$(MKDIR) $(HOME)/.config/i3
+#	$(STOW) -t $(HOME)/.config/i3 i3
+#	$(COPY) i3-keyboard-layout $(HOME)/bin
+#	$(COPY) i3-sleep.sh $(HOME)/bin
+#	$(COPY) setup_tmux_terminals.sh $(HOME)/bin
+	$(MAKE) setup_vim
 # helix
 #	$(MKDIR) $(HOME)/.config/helix
 #	$(STOW) -t $(HOME)/.config/helix helix
@@ -49,6 +47,11 @@ tmux:
 	cd $(HOME)/repo/tmux && sh autogen.sh
 	cd $(HOME)/repo/tmux && ./configure --prefix=$(HOME)
 	make -C $(HOME)/repo/tmux install -j 4
+
+setup_vim:
+	$(STOW) -t $(HOME) vim
+	$(MKDIR) $(HOME)/.vim
+	./setup_plugins.sh .vim
 
 setup_nvim:
 	./setup_plugins.sh .config/nvim
