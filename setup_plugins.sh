@@ -13,7 +13,7 @@ declare -a plugins=(
     "junegunn/fzf.vim"
 #    "jamespwilliams/bat.vim"
 #    "altercation/vim-colors-solarized"
-    "chriskempson/base16-vim"
+    "base16-project/base16-vim"
 #    "jackguo380/vim-lsp-cxx-highlight"
 #    "neovim/nvim-lspconfig"
 #    "nvim-lua/completion-nvim"
