@@ -68,28 +68,23 @@ inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 
 " Remove all Trailing withespaces
-map <Leader>s :%s/\s\+$//g<CR>
+nnoremap <Leader>s :%s/\s\+$//g<CR>
 
 " Buffer navigation
-map <Leader>t :TagbarToggle<CR>
-map <S-Tab> :bp<CR>
-map <Tab> :bn<CR>
-map <Leader>x :bd<CR>
-inoremap <Leader>t :TagbarToggle<CR>
-inoremap <S-Tab> <Esc>:bp<CR>
-inoremap <Tab> <Esc>:bn<CR>
-inoremap <Leader>x <Esc>:bd<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <S-Tab> :bp<CR>
+nnoremap <Tab> :bn<CR>
+nnoremap <Leader>x :bd<CR>
 
 " Terminal
 "tnoremap <Esc> <C-\><C-n>
 
 " Go to directory of current file
-map <Leader>d :lcd %:p:h<CR>
-inoremap <Leader>d <Esc>:lcd %:p:h<CR>
+nnoremap <Leader>d :lcd %:p:h<CR>
 
 " NERDTree on CTRL+n
 let NERDTreeShowHidden=1
-map <silent> <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
 "let g:NERDTreeQuitOnOpen=1
