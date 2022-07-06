@@ -50,8 +50,8 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
-let base16colorspace=256
-set termguicolors
+"let base16colorspace=256
+"set termguicolors
 colorscheme base16-default-dark
 
 " vim theme
