@@ -1,4 +1,9 @@
-set prompt="%{\033[31m%}%B(%?)[%P]%n@%m:%{\033[34m%}%~%{\033[0m%}%b> "
+set red=`tput setaf 1`
+set green=`tput setaf 2`
+set blue=`tput setaf 4`
+set bold=`tput bold`
+set reset=`tput sgr0`
+set prompt="%{$red$bold%}%n@%m:%{$blue%}%c3 %#%{$reset%} "
 alias precmd 'echo -n "\033]0;$cwd\007"'
 bindkey "^r" i-search-back
 stty erase '^?'
