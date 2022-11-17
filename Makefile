@@ -32,6 +32,7 @@ stow: deps
 #	$(STOW) -t $(HOME)/.config/helix helix
 # nvim uses .config
 	$(MAKE) setup_nvim
+	$(MAKE) setup_tmux_yank
 #	$(MKDIR) $(HOME)/.config/nvim
 #	$(STOW) -t $(HOME)/.config/nvim nvim
 
@@ -47,6 +48,9 @@ tmux:
 	cd $(HOME)/repo/tmux && sh autogen.sh
 	cd $(HOME)/repo/tmux && ./configure --prefix=$(HOME)
 	make -C $(HOME)/repo/tmux install -j 4
+
+setup_tmux_yank:
+	git clone https://github.com/tmux-plugins/tmux-yank $(HOME)/repo/tmux-yank
 
 setup_vim:
 	$(STOW) -t $(HOME) vim
