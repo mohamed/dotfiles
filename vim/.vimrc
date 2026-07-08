@@ -51,14 +51,14 @@ set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "let base16colorspace=256
-"set termguicolors
+set termguicolors
 colorscheme base16-default-dark
 
 " vim theme
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " map leader to space
 let mapleader = " "
