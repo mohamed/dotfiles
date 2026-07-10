@@ -7,3 +7,5 @@
 	gr = grep -i -n
 [push]
 	default = simple
+[core]
+	editor = vim
