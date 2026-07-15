@@ -19,13 +19,19 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set hidden
 "set paste
-"set wildmode=longest,list   " get bash-like tab completions
+set wildmode=longest,list   " get bash-like tab completions
 "set cc=80                   " set an 80 column border for good coding style
 set title
 set clipboard+=unnamedplus
 set tw=80
 set linebreak
 set ic hls is
+
+" csh fix
+"set t_TI= t_TE=
+"set t_u7=
+"set t_RK=
+"set t_RV=
 
 " Spaces and tabs
 syntax match Tab /\t/
