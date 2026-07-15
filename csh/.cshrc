@@ -1,24 +1,11 @@
 
 
+
 if ($?prompt) then
 
-    if ($?TERM) then
-        set red=`tput setaf 1`
-        set green=`tput setaf 2`
-        set blue=`tput setaf 4`
-        set bold=`tput bold`
-        set reset=`tput sgr0`
-    else
-        set red=""
-        set green=""
-        set blue=""
-        set bold=""
-        set reset=""
-    endif
-
-    set prompt="${red}${bold}%n@%m:${blue}%~ %#${reset} "
-
-    alias precmd 'printf "\033]0;%s\007" "$cwd"'
+    #set prompt="%B%n@%m:%~ %#%b "
+    set prompt="%{\e[31m%}%n@%m%{\e[34m%}:%~%{\e[0m%} %# "
+    #alias precmd 'printf "\033]0;%s\007" "$cwd"'
 
     bindkey "^r" i-search-back
     stty erase '^?'
